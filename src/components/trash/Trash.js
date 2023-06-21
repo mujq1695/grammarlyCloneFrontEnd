@@ -13,7 +13,7 @@ const Trash = () => {
   const { data } = useQuery(
     "get-trash",
     async () => {
-      return await axios.get("http://localhost:4000/getAllTrashContent", {
+      return await axios.get("https://grammarly-backend-nodejs-new.onrender.com/getAllTrashContent", {
         withCredentials: true,
       });
     },
@@ -30,7 +30,7 @@ const Trash = () => {
 
   const mutationPermenantDelete = useMutation({
     mutationFn: async (id) => {
-      return await axios.delete(`http://localhost:4000/contents/delete/${id}`, {
+      return await axios.delete(`https://grammarly-backend-nodejs-new.onrender.com/contents/delete/${id}`, {
         withCredentials: true,
       });
     },

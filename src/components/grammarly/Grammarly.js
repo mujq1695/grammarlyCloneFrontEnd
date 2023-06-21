@@ -19,7 +19,7 @@ const location = useLocation();
 console.log(location);
 
 const { data, isLoading } = useQuery("getOne-text", async () => {
-  return await axios.get(`http://localhost:4000/content/getOne/${location.state.id}`,{
+  return await axios.get(`https://grammarly-backend-nodejs-new.onrender.com/content/getOne/${location.state.id}`,{
 
   withCredentials:true,
 
@@ -37,7 +37,7 @@ const { data, isLoading } = useQuery("getOne-text", async () => {
 
   const mutationSaveNewText = useMutation({
     mutationFn: async(text) => {
-      return await axios.put(`http://localhost:4000/content/update/${location.state.id}`, {
+      return await axios.put(`https://grammarly-backend-nodejs-new.onrender.com/content/update/${location.state.id}`, {
         text: text,
         
       },{

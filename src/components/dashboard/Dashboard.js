@@ -15,7 +15,7 @@ const Dashboard = () => {
   ////////////get all saved text ////////////////
 
   const { data, isLoading } = useQuery("getAll-text", async () => {
-    return await axios.get("http://localhost:4000/getAll", {
+    return await axios.get("https://grammarly-backend-nodejs-new.onrender.com/getAll", {
       withCredentials: true,
     });
   });
@@ -28,7 +28,7 @@ const Dashboard = () => {
   const mutationNewDocument = useMutation({
     mutationFn: async () => {
       return await axios.post(
-        "http://localhost:4000/createContent",
+        "https://grammarly-backend-nodejs-new.onrender.com/createContent",
         {
           text: "new dummy Text Added for testing",
         },
@@ -50,7 +50,7 @@ const Dashboard = () => {
   const mutationDelete = useMutation({
     mutationFn: async (id) => {
       return await axios.put(
-        `http://localhost:4000/content/moveContentToTrash/${id}`,{},
+        `https://grammarly-backend-nodejs-new.onrender.com/content/moveContentToTrash/${id}`,{},
         {
           withCredentials: true,
         }

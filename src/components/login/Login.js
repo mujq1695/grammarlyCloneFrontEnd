@@ -17,7 +17,7 @@ const Login = () => {
   const mutationLogin = useMutation("login", {
     mutationFn: async () => {
     return await axios
-        .post("http://localhost:4000/login", {
+        .post("https://grammarly-backend-nodejs-new.onrender.com/login", {
           email: email,
           password: password,
         },{
@@ -41,7 +41,7 @@ const Login = () => {
 
   const mutationRegister = useMutation("signup", {
     mutationFn: async () => {
-    return await  axios.post("http://localhost:4000/signup", {
+    return await  axios.post("https://grammarly-backend-nodejs-new.onrender.com/signup", {
         email: email,
         password: password,
         name: name,
